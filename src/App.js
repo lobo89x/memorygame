@@ -48,9 +48,10 @@ class App extends Component {
         <p className="App-intro">
           this is  simple react game to test my skills
         </p>
+        <div className="card-deck">
+          <Card cards={cards}/>
+        </div>
 
-        <Card 
-        cards={cards}/>
       </div>
     );
   }
