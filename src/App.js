@@ -3,6 +3,9 @@ import React, { Component } from 'react';
 import Card from './components/card'
 import './App.css';
 
+
+
+
 const cards = [
   {
     id: 1,
@@ -34,6 +37,10 @@ const cards = [
   },
   {
     id: 8,
+    name: "8",
+  },
+  {
+    id: 9,
     name: "9",
   }
 ];
@@ -48,8 +55,16 @@ class App extends Component {
         <p className="App-intro">
           this is  simple react game to test my skills
         </p>
-        <div className="card-deck">
-          <Card cards={cards}/>
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-3 text-center"></div>
+            <div className="col-lg-6 text-center">
+                <div className="card-deck">
+                  <Card cards={cards}/>
+                </div>
+            </div>
+            <div className="col-lg-3 text-center"></div>
+          </div>
         </div>
 
       </div>
