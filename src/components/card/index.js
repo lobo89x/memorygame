@@ -12,8 +12,19 @@ state = {
   };
 
   select = num => {
+      if (this.state.guesslist.includes(num)) {
+        
+        this.setState({ guesslist: [] }, () => {
+            console.log(this.state.guesslist);
+        this.props.scoreupdate(this.state.guesslist)    
+        });
+    }
+    else 
+    {
         this.state.guesslist.push(num);
         console.log(this.state.guesslist);
+        this.props.scoreupdate(this.state.guesslist)
+      }
         this.scramblenumbers();
   }; 
 
@@ -35,7 +46,7 @@ state = {
         }
         //console.log(temp);
         this.setState({ cardlist: temp }, () => {
-            console.log(this.state.cardlist);
+            // console.log(this.state.cardlist);
         });
     
         //   console.log(this.props.cards[i].id);

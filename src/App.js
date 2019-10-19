@@ -45,7 +45,19 @@ const cards = [
   }
 ];
 
+
+
 class App extends Component {
+  state = {
+    score: 0
+  };
+
+  updatescore = (gl) => {
+    this.setState( { score: gl.length }, () => {
+      console.log(this.state.score);
+  });
+  }
+
   render() {
     return (
       <div className="App">
@@ -53,14 +65,15 @@ class App extends Component {
           <h2>Memory Game</h2>
         </div>
         <p className="App-intro">
-          this is  simple react game to test my skills
+          this is  simple react game to test my skills. Click the numbers but do not or you'll have to start over!
         </p>
+        <h6>Your Score is::  {this.state.score}</h6>
         <div className="container">
           <div className="row">
             <div className="col-lg-3 text-center"></div>
             <div className="col-lg-6 text-center">
                 <div className="card-deck">
-                  <Card cards={cards}/>
+                  <Card scoreupdate={this.updatescore} cards={cards}/>
                 </div>
             </div>
             <div className="col-lg-3 text-center"></div>
